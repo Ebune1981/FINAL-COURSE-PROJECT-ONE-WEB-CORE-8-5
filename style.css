@@ -457,7 +457,11 @@ body {
     margin-bottom: 16px;
 }
 
-.equipment-card img{
+.equipment__card {
+    display: block;
+}
+
+.equipment__card img{
     display: block;
     width: min(100%, 150px);
     height:100px;
