@@ -1,0 +1,146 @@
+.brand-section {
+  margin-top: 24px;
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: #1b1c21;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__chevron {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    fill: none;
+    stroke: #20b2aa;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+    transition: transform 160ms ease;
+  }
+
+  &.is-expanded &__chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.brands-slider {
+  position: relative;
+  overflow: hidden;
+
+  &__track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 2px 2px 8px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex: 0 0 min(78%, 240px);
+    min-width: 0;
+    min-height: 80px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #fff;
+    scroll-snap-align: start;
+    text-decoration: none;
+    transition: transform 160ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+
+  &__button {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dedede;
+    border-radius: 50%;
+    background: #fff;
+    color: #1b1c21;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:disabled {
+      cursor: default;
+      opacity: 0.4;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #d5d5d5;
+    cursor: pointer;
+
+    &.is-active {
+      background: #7e7e82;
+    }
+  }
+}
+
+.brand-section.is-expanded .brands-slider {
+  overflow: visible;
+
+  &__track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  &__slide {
+    width: 100%;
+    min-height: 80px;
+  }
+
+  &__controls {
+    display: none;
+  }
+}

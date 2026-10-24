@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 56px;
+  margin: -16px -16px 24px;
+  padding: 8px 16px;
+  background: #fff;
+
+  &__button {
+    display: inline-flex;
+    flex: 0 0 40px;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+
+    &--visible-tablet {
+      display: none;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  &__logo-link {
+    display: inline-flex;
+    margin-right: auto;
+  }
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: auto;
+  }
+
+  &__divider {
+    flex: 0 0 1px;
+    height: 32px;
+    background: #eaeaea;
+
+    &--visible-tablet {
+      display: none;
+    }
+  }
+}

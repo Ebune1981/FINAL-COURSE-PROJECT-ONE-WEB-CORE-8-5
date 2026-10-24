@@ -1,0 +1,134 @@
+@media (min-width: 768px) {
+  .main-content {
+    padding: 24px;
+  }
+
+  .header {
+    margin: -24px -24px 32px;
+    padding: 8px 24px;
+
+    &__button--visible-tablet,
+    &__divider--visible-tablet {
+      display: inline-flex;
+    }
+  }
+
+  .services__title {
+    font-size: 28px;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+
+    &__content,
+    &__picture {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+  }
+
+  .brand-section {
+    margin-top: 32px;
+
+    &.is-expanded .brands-slider__track {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .brands-slider__track {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    overflow: visible;
+  }
+
+  .brands-slider__slide {
+    width: 100%;
+    min-height: 90px;
+  }
+
+  .brands-slider__controls {
+    display: none;
+  }
+
+  .brand-section:not(.is-expanded) .brands-slider__slide:nth-child(n + 7) {
+    display: none;
+  }
+
+  .brand-section.is-expanded .brands-slider__slide {
+    display: flex;
+  }
+
+  .equipment__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .section-title {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding: 32px;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .sidebar {
+    display: block;
+  }
+
+  .services__top {
+    gap: 20px;
+  }
+
+  .services__title {
+    margin-right: auto;
+  }
+
+  .services__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navigation {
+    width: calc(100% + 64px);
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .hero {
+    gap: 28px;
+  }
+
+  .brands-slider__track,
+  .brand-section.is-expanded .brands-slider__track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .brand-section:not(.is-expanded) .brands-slider__slide:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .services__title {
+    font-size: 22px;
+  }
+
+  .page-footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}

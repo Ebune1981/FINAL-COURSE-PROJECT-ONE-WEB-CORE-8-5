@@ -1,0 +1,11 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 16px;
+  background: #f8f8f8;
+}
