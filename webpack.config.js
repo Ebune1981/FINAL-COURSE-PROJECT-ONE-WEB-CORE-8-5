@@ -94,6 +94,16 @@ module.exports = (env, argv) => {
             from: './src/img',
             to: 'img',
             noErrorOnMissing: true
+          },
+          {
+            from: path.resolve(__dirname, 'icon-*'),
+            to: '[name][ext]',
+            noErrorOnMissing: true
+          },
+          {
+            from: './Icon.svg',
+            to: 'Icon.svg',
+            noErrorOnMissing: true
           }
         ]
       })

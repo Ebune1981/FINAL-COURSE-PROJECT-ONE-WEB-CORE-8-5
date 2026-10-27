@@ -1,0 +1,60 @@
+@use '../variables' as vars;
+
+.navigation {
+  position: relative;
+  width: calc(100% + 32px);
+  margin: 16px -16px;
+  padding: 8px 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.navigation {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.navigation {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+  }
+}
+
+.navigation {
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 12px;
+    color: vars.$color-muted;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.navigation {
+  &__link--active {
+    border: 2px solid vars.$color-accent-soft;
+    border-radius: 4px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navigation {
+    width: calc(100% + 64px);
+    margin-right: -32px;
+    margin-left: -32px;
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}

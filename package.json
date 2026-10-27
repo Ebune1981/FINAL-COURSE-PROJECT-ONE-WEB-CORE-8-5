@@ -60,5 +60,8 @@
   },
   "allowScripts": {
     "@parcel/watcher": false
+  },
+  "dependencies": {
+    "swiper": "^14.3.0"
   }
 }

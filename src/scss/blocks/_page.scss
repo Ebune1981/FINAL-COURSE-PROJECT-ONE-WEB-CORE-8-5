@@ -1,14 +1,83 @@
-// Every block file loads the variables it uses: @use is file-scoped
 @use '../variables' as vars;
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: vars.$background;
-  color: vars.$text;
+* {
+  box-sizing: border-box;
 }
 
-h3 {
-  color: vars.$accent;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: vars.$color-text;
+  background: vars.$color-background;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid vars.$color-accent;
+  outline-offset: 3px;
+}
+
+.section-title {
+  margin: 0 0 16px;
+  color: vars.$color-muted;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 16px;
+  background: vars.$color-background;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-content {
+    padding: 32px;
+  }
 }
