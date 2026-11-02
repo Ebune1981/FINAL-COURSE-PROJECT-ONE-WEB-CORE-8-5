@@ -1,0 +1,72 @@
+@use '../variables' as vars;
+
+.pricing {
+  margin: 32px 0 24px;
+}
+
+.pricing__table-wrap {
+  overflow-x: auto;
+  border: 1px solid vars.$color-border;
+  border-radius: 12px;
+  background: vars.$color-white;
+}
+
+.pricing__table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pricing__table thead {
+  background: vars.$color-table-heading;
+}
+
+.pricing__table th {
+  padding: 14px 12px;
+  color: vars.$color-table-muted;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pricing__table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid vars.$color-table-rule;
+  color: vars.$color-table-text;
+}
+
+.pricing__table tbody tr:hover {
+  background: vars.$color-row-hover;
+}
+
+.pricing__order-button {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 20px;
+  background: vars.$color-order;
+  color: vars.$color-white;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pricing__note {
+  margin: 16px 0;
+  color: vars.$color-muted;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.pricing__offer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: vars.$color-ink;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pricing__offer-icon {
+  width: 20px;
+  height: 20px;
+}

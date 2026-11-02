@@ -1,0 +1,13 @@
+@use '../variables' as vars;
+
+.page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 24px 0 8px;
+  border-top: 1px solid vars.$color-border;
+  color: vars.$color-muted;
+  font-size: 12px;
+  text-align: center;
+}

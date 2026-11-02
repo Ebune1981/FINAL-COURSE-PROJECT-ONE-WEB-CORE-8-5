@@ -1,0 +1,36 @@
+@use '../variables' as vars;
+
+.equipment {
+  margin-top: 32px;
+}
+
+.equipment__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.equipment__card {
+  display: flex;
+  min-height: 110px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: vars.$color-white;
+}
+
+.equipment__card img {
+  display: block;
+  width: min(100%, 150px);
+  height: 100px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .equipment__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
