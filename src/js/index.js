@@ -4,7 +4,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
 import Swiper from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules'
+import { A11y, Navigation, Pagination } from 'swiper/modules'
 
 const readMoreButton = document.querySelector('.hero__more')
 
@@ -65,4 +65,33 @@ if (brandSection) {
       swiper.update()
     }
   })
+}
+
+const pricingCards = document.querySelector('.pricing__cards')
+
+if (pricingCards) {
+  const mobilePricingQuery = window.matchMedia('(max-width: 767px)')
+  let pricingSwiper = null
+
+  const syncPricingSwiper = () => {
+    if (mobilePricingQuery.matches && !pricingSwiper) {
+      pricingSwiper = new Swiper(pricingCards, {
+        modules: [Pagination, A11y],
+        slidesPerView: 1,
+        pagination: {
+          el: pricingCards.querySelector('.pricing__pagination'),
+          clickable: true
+        },
+        a11y: {
+          paginationBulletMessage: 'Go to service {{index}}'
+        }
+      })
+    } else if (!mobilePricingQuery.matches && pricingSwiper) {
+      pricingSwiper.destroy(true, true)
+      pricingSwiper = null
+    }
+  }
+
+  syncPricingSwiper()
+  mobilePricingQuery.addEventListener('change', syncPricingSwiper)
 }

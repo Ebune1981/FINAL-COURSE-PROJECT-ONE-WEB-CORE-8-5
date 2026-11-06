@@ -4,7 +4,86 @@
   margin: 32px 0 24px;
 }
 
+.pricing__cards {
+  overflow: hidden;
+}
+
+.pricing__cards-wrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing__card-slide {
+  height: auto;
+}
+
+.pricing__card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid vars.$color-border;
+  border-radius: 12px;
+  background: vars.$color-white;
+}
+
+.pricing__service {
+  margin: 0;
+  color: vars.$color-ink;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.pricing__details {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.pricing__detail {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pricing__detail dt {
+  color: vars.$color-table-muted;
+}
+
+.pricing__detail dd {
+  margin: 0;
+  color: vars.$color-table-text;
+  text-align: right;
+}
+
+.pricing__pagination {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  margin-top: 16px;
+  transform: none;
+}
+
+.pricing__pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  background: vars.$color-gray;
+  opacity: 1;
+}
+
+.pricing__pagination .swiper-pagination-bullet-active {
+  background: vars.$color-muted;
+}
+
 .pricing__table-wrap {
+  display: none;
   overflow-x: auto;
   border: 1px solid vars.$color-border;
   border-radius: 12px;
@@ -48,6 +127,14 @@
   cursor: pointer;
   font-size: 12px;
   font-weight: 700;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.pricing__order-button:hover {
+  background: vars.$color-aqua-border;
+  color: vars.$color-ink;
 }
 
 .pricing__note {
@@ -69,4 +156,14 @@
 .pricing__offer-icon {
   width: 20px;
   height: 20px;
+}
+
+@media (min-width: 768px) {
+  .pricing .pricing__cards {
+    display: none;
+  }
+
+  .pricing__table-wrap {
+    display: block;
+  }
 }
