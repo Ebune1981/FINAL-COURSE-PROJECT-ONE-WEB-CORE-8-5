@@ -4,21 +4,29 @@
   margin-top: 32px;
 }
 
+.equipment__slider {
+  position: relative;
+  overflow: hidden;
+}
+
 .equipment__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  display: flex;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .equipment__card {
   display: flex;
+  flex-shrink: 0;
+  height: auto;
   min-height: 110px;
   align-items: center;
   justify-content: center;
   padding: 8px;
   border: 0;
-  border-radius: 8px;
-  background: vars.$color-white;
+  background: transparent;
 }
 
 .equipment__card img {
@@ -28,9 +36,88 @@
   object-fit: contain;
 }
 
+.equipment__controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.equipment__button {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid vars.$color-border-strong;
+  border-radius: 50%;
+  background: vars.$color-white;
+  color: vars.$color-ink;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.equipment__button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.equipment__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: vars.$color-ink;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.equipment__chevron {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: vars.$color-focus;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  transition: transform 160ms ease;
+}
+
+.equipment.is-expanded .equipment__chevron {
+  transform: rotate(180deg);
+}
+
+.equipment.is-expanded .equipment__slider {
+  overflow: visible;
+}
+
+.equipment.is-expanded .equipment__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  transform: none !important;
+}
+
+.equipment.is-expanded .equipment__card {
+  width: 100% !important;
+  margin-right: 0 !important;
+}
+
+.equipment.is-expanded .equipment__controls {
+  display: none;
+}
+
 @media (min-width: 768px) {
-  .equipment__grid {
+  .equipment.is-expanded .equipment__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
+  }
+
+  .equipment__card {
+    min-height: 130px;
   }
 }

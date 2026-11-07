@@ -67,6 +67,47 @@ if (brandSection) {
   })
 }
 
+const equipmentSection = document.querySelector('.equipment')
+
+if (equipmentSection) {
+  const slider = equipmentSection.querySelector('.equipment__slider')
+  const toggleButton = equipmentSection.querySelector('.equipment__toggle')
+  const toggleLabel = toggleButton.querySelector('.equipment__toggle-label')
+  const swiper = new Swiper(slider, {
+    modules: [Navigation],
+    slidesPerView: 1.2,
+    spaceBetween: 12,
+    navigation: {
+      nextEl: slider.querySelector('.equipment__button--next'),
+      prevEl: slider.querySelector('.equipment__button--previous')
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 16
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 16
+      }
+    }
+  })
+
+  toggleButton.addEventListener('click', () => {
+    const isExpanded = equipmentSection.classList.toggle('is-expanded')
+    toggleButton.setAttribute('aria-expanded', String(isExpanded))
+    toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
+
+    if (isExpanded) {
+      swiper.disable()
+    } else {
+      swiper.enable()
+      swiper.slideTo(0)
+      swiper.update()
+    }
+  })
+}
+
 const pricingCards = document.querySelector('.pricing__cards')
 
 if (pricingCards) {

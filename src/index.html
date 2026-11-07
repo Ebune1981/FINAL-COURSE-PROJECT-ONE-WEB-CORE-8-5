@@ -331,27 +331,72 @@
         </section>
         <section class="equipment">
           <h2 class="section-title">Repairs of various types of equipment</h2>
-          <div class="equipment__grid">
-            <a class="equipment__card" href="#" aria-label="Laptop repair">
-              <img src="./img/icon-laptoprepair.png" alt="Laptop repair" />
-            </a>
-            <a class="equipment__card" href="#" aria-label="Monitor repair">
-              <img src="./img/icon-monitorrepair.png" alt="Monitor repair" />
-            </a>
-            <a class="equipment__card" href="#" aria-label="Tablet repair">
-              <img src="./img/icon-tablet.jpg" alt="Tablet repair" />
-            </a>
-            <a
-              class="equipment__card"
-              href="#"
-              aria-label="Desktop computer repair"
-            >
-              <img
-                src="./img/icon-pcrepair.png"
-                alt="Desktop computer repair"
-              />
-            </a>
+          <div
+            class="equipment__slider swiper"
+            role="region"
+            aria-label="Equipment types"
+          >
+            <div class="equipment__grid swiper-wrapper">
+              <a
+                class="equipment__card swiper-slide"
+                href="#"
+                aria-label="Laptop repair"
+              >
+                <img src="./img/icon-laptoprepair.png" alt="Laptop repair" />
+              </a>
+              <a
+                class="equipment__card swiper-slide"
+                href="#"
+                aria-label="Monitor repair"
+              >
+                <img src="./img/icon-monitorrepair.png" alt="Monitor repair" />
+              </a>
+              <a
+                class="equipment__card swiper-slide"
+                href="#"
+                aria-label="Tablet repair"
+              >
+                <img src="./img/icon-tablet.jpg" alt="Tablet repair" />
+              </a>
+              <a
+                class="equipment__card swiper-slide"
+                href="#"
+                aria-label="Desktop computer repair"
+              >
+                <img
+                  src="./img/icon-pcrepair.png"
+                  alt="Desktop computer repair"
+                />
+              </a>
+            </div>
+            <div class="equipment__controls">
+              <button
+                class="equipment__button equipment__button--previous"
+                type="button"
+                aria-label="Previous equipment type"
+              >
+                &lsaquo;
+              </button>
+              <button
+                class="equipment__button equipment__button--next"
+                type="button"
+                aria-label="Next equipment type"
+              >
+                &rsaquo;
+              </button>
+            </div>
           </div>
+          <button class="equipment__toggle" type="button" aria-expanded="false">
+            <svg
+              class="equipment__chevron"
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              focusable="false"
+            >
+              <path d="m3 4 5 5 5-5M3 8l5 5 5-5" />
+            </svg>
+            <span class="equipment__toggle-label">Show all</span>
+          </button>
         </section>
         <section class="pricing">
           <h2 id="pricing-title" class="section-title">Service prices</h2>
