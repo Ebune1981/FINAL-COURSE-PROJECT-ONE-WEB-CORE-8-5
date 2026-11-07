@@ -170,31 +170,146 @@
         </section>
         <section class=equipment>
           <h2 class=section-title>Repairs of various types of equipment</h2>
-          <div class=equipment__grid>
-            <a class=equipment__card href=# aria-label="Laptop repair">
-              <img src=./img/icon-laptoprepair.png alt="Laptop repair">
-            </a>
-            <a class=equipment__card href=# aria-label="Monitor repair">
-              <img src=./img/icon-monitorrepair.png alt="Monitor repair">
-            </a>
-            <a class=equipment__card href=# aria-label="Tablet repair">
-              <img src=./img/icon-tablet.jpg alt="Tablet repair">
-            </a>
-            <a class=equipment__card href=# aria-label="Desktop computer repair">
-              <img src=./img/icon-pcrepair.png alt="Desktop computer repair">
-            </a>
+          <div class="equipment__slider swiper" role=region aria-label="Equipment types">
+            <div class="equipment__grid swiper-wrapper">
+              <a class="equipment__card swiper-slide" href=# aria-label="Laptop repair">
+                <img src=./img/icon-laptoprepair.png alt="Laptop repair">
+              </a>
+              <a class="equipment__card swiper-slide" href=# aria-label="Monitor repair">
+                <img src=./img/icon-monitorrepair.png alt="Monitor repair">
+              </a>
+              <a class="equipment__card swiper-slide" href=# aria-label="Tablet repair">
+                <img src=./img/icon-tablet.jpg alt="Tablet repair">
+              </a>
+              <a class="equipment__card swiper-slide" href=# aria-label="Desktop computer repair">
+                <img src=./img/icon-pcrepair.png alt="Desktop computer repair">
+              </a>
+            </div>
+            <div class=equipment__controls>
+              <button class="equipment__button equipment__button--previous" type=button aria-label="Previous equipment type">
+                ‹
+              </button>
+              <button class="equipment__button equipment__button--next" type=button aria-label="Next equipment type">
+                ›
+              </button>
+            </div>
           </div>
+          <button class=equipment__toggle type=button aria-expanded=false>
+            <svg class=equipment__chevron aria-hidden=true viewBox="0 0 16 16" focusable=false>
+              <path d="m3 4 5 5 5-5M3 8l5 5 5-5"/>
+            </svg>
+            <span class=equipment__toggle-label>Show all</span>
+          </button>
         </section>
         <section class=pricing>
-          <h2 class=section-title>Service prices</h2>
+          <h2 id=pricing-title class=section-title>Service prices</h2>
+          <div class="pricing__cards swiper" role=region aria-label="Service prices">
+            <ul class="pricing__cards-wrapper swiper-wrapper">
+              <li class="pricing__card-slide swiper-slide">
+                <article class=pricing__card>
+                  <h3 class=pricing__service>Diagnostics</h3>
+                  <dl class=pricing__details>
+                    <div class=pricing__detail>
+                      <dt>Price</dt>
+                      <dd>Free of charge</dd>
+                    </div>
+                    <div class=pricing__detail>
+                      <dt>Deadline</dt>
+                      <dd>30 min</dd>
+                    </div>
+                  </dl>
+                  <button class=pricing__order-button type=button aria-label="Order Diagnostics">
+                    ORDER
+                  </button>
+                </article>
+              </li>
+              <li class="pricing__card-slide swiper-slide">
+                <article class=pricing__card>
+                  <h3 class=pricing__service>Display replacement</h3>
+                  <dl class=pricing__details>
+                    <div class=pricing__detail>
+                      <dt>Price</dt>
+                      <dd>1,000p</dd>
+                    </div>
+                    <div class=pricing__detail>
+                      <dt>Deadline</dt>
+                      <dd>30-120 min</dd>
+                    </div>
+                  </dl>
+                  <button class=pricing__order-button type=button aria-label="Order Display replacement">
+                    ORDER
+                  </button>
+                </article>
+              </li>
+              <li class="pricing__card-slide swiper-slide">
+                <article class=pricing__card>
+                  <h3 class=pricing__service>
+                    Polyphonic speaker replacement
+                  </h3>
+                  <dl class=pricing__details>
+                    <div class=pricing__detail>
+                      <dt>Price</dt>
+                      <dd>1,000p</dd>
+                    </div>
+                    <div class=pricing__detail>
+                      <dt>Deadline</dt>
+                      <dd>30-120 min</dd>
+                    </div>
+                  </dl>
+                  <button class=pricing__order-button type=button aria-label="Order Polyphonic speaker replacement">
+                    ORDER
+                  </button>
+                </article>
+              </li>
+              <li class="pricing__card-slide swiper-slide">
+                <article class=pricing__card>
+                  <h3 class=pricing__service>
+                    Testing with a technical report
+                  </h3>
+                  <dl class=pricing__details>
+                    <div class=pricing__detail>
+                      <dt>Price</dt>
+                      <dd>1,000p</dd>
+                    </div>
+                    <div class=pricing__detail>
+                      <dt>Deadline</dt>
+                      <dd>30-120 min</dd>
+                    </div>
+                  </dl>
+                  <button class=pricing__order-button type=button aria-label="Order Testing with a technical report">
+                    ORDER
+                  </button>
+                </article>
+              </li>
+              <li class="pricing__card-slide swiper-slide">
+                <article class=pricing__card>
+                  <h3 class=pricing__service>Software replacement</h3>
+                  <dl class=pricing__details>
+                    <div class=pricing__detail>
+                      <dt>Price</dt>
+                      <dd>1,000p</dd>
+                    </div>
+                    <div class=pricing__detail>
+                      <dt>Deadline</dt>
+                      <dd>30-120 min</dd>
+                    </div>
+                  </dl>
+                  <button class=pricing__order-button type=button aria-label="Order Software replacement">
+                    ORDER
+                  </button>
+                </article>
+              </li>
+            </ul>
+            <div class="pricing__pagination swiper-pagination" role=group aria-label="Service price pages"></div>
+          </div>
           <div class=pricing__table-wrap>
-            <table class=pricing__table>
+            <table class=pricing__table aria-labelledby=pricing-title>
               <thead>
                 <tr>
-                  <th>Repair Services</th>
-                  <th>Price</th>
-                  <th>Deadline</th>
-                  <th>Order</th>
+                  <th scope=col>Repair Services</th>
+                  <th scope=col>Price</th>
+                  <th scope=col>Deadline</th>
+                  <th scope=col>Order</th>
                 </tr>
               </thead>
               <tbody>
@@ -203,7 +318,7 @@
                   <td>Free of charge</td>
                   <td>30 min</td>
                   <td>
-                    <button class=pricing__order-button type=button>ORDER</button>
+                    <button class=pricing__order-button type=button aria-label="Order Diagnostics">ORDER</button>
                   </td>
                 </tr>
                 <tr>
@@ -211,7 +326,7 @@
                   <td>1,000p</td>
                   <td>30-120 min</td>
                   <td>
-                    <button class=pricing__order-button type=button>ORDER</button>
+                    <button class=pricing__order-button type=button aria-label="Order Display replacement">ORDER</button>
                   </td>
                 </tr>
                 <tr>
@@ -219,7 +334,7 @@
                   <td>1,000p</td>
                   <td>30-120 min</td>
                   <td>
-                    <button class=pricing__order-button type=button>ORDER</button>
+                    <button class=pricing__order-button type=button aria-label="Order Polyphonic speaker replacement">ORDER</button>
                   </td>
                 </tr>
                 <tr>
@@ -227,7 +342,7 @@
                   <td>1,000p</td>
                   <td>30-120 min</td>
                   <td>
-                    <button class=pricing__order-button type=button>ORDER</button>
+                    <button class=pricing__order-button type=button aria-label="Order Testing with a technical report">ORDER</button>
                   </td>
                 </tr>
                 <tr>
@@ -235,7 +350,7 @@
                   <td>1,000p</td>
                   <td>30-120 min</td>
                   <td>
-                    <button class=pricing__order-button type=button>ORDER</button>
+                    <button class=pricing__order-button type=button aria-label="Order Software replacement">ORDER</button>
                   </td>
                 </tr>
               </tbody>
