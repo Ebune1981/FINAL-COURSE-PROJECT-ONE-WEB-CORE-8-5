@@ -27,85 +27,71 @@ const brandSection = document.querySelector('.brand-section')
 if (brandSection) {
   const slider = brandSection.querySelector('.brands-slider')
   const toggleButton = brandSection.querySelector('.brand-section__toggle')
-  const toggleLabel = toggleButton.querySelector('.brand-section__toggle-label')
-  const swiper = new Swiper(slider, {
-    modules: [Navigation, Pagination],
-    slidesPerView: 1.2,
-    spaceBetween: 12,
-    navigation: {
-      nextEl: slider.querySelector('.brands-slider__button--next'),
-      prevEl: slider.querySelector('.brands-slider__button--previous')
-    },
-    pagination: {
-      el: slider.querySelector('.brands-slider__pagination'),
-      clickable: true
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 16
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 16
+  const toggleLabel = toggleButton?.querySelector('.brand-section__toggle-label')
+  const mobileBrandQuery = window.matchMedia('(max-width: 767px)')
+  let brandSwiper = null
+
+  const syncBrandSwiper = () => {
+    if (mobileBrandQuery.matches && !brandSwiper) {
+      brandSwiper = new Swiper(slider, {
+        modules: [Navigation, Pagination],
+        slidesPerView: 1.2,
+        spaceBetween: 12,
+        navigation: {
+          nextEl: slider.querySelector('.brands-slider__button--next'),
+          prevEl: slider.querySelector('.brands-slider__button--previous')
+        },
+        pagination: {
+          el: slider.querySelector('.brands-slider__pagination'),
+          clickable: true
+        }
+      })
+      if (brandSection.classList.contains('is-expanded')) {
+        brandSwiper.disable()
       }
+    } else if (!mobileBrandQuery.matches && brandSwiper) {
+      brandSwiper.destroy(true, true)
+      brandSwiper = null
     }
-  })
+  }
 
-  toggleButton.addEventListener('click', () => {
-    const isExpanded = brandSection.classList.toggle('is-expanded')
-    toggleButton.setAttribute('aria-expanded', String(isExpanded))
-    toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
+  syncBrandSwiper()
+  mobileBrandQuery.addEventListener('change', syncBrandSwiper)
 
-    if (isExpanded) {
-      swiper.disable()
-    } else {
-      swiper.enable()
-      swiper.slideTo(0)
-      swiper.update()
-    }
-  })
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const isExpanded = brandSection.classList.toggle('is-expanded')
+      toggleButton.setAttribute('aria-expanded', String(isExpanded))
+      if (toggleLabel) {
+        toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
+      }
+
+      if (isExpanded) {
+        brandSwiper?.disable()
+      } else {
+        brandSwiper?.enable()
+        brandSwiper?.slideTo(0)
+        brandSwiper?.update()
+      }
+    })
+  }
 }
 
 const equipmentSection = document.querySelector('.equipment')
 
 if (equipmentSection) {
-  const slider = equipmentSection.querySelector('.equipment__slider')
   const toggleButton = equipmentSection.querySelector('.equipment__toggle')
-  const toggleLabel = toggleButton.querySelector('.equipment__toggle-label')
-  const swiper = new Swiper(slider, {
-    modules: [Navigation],
-    slidesPerView: 1.2,
-    spaceBetween: 12,
-    navigation: {
-      nextEl: slider.querySelector('.equipment__button--next'),
-      prevEl: slider.querySelector('.equipment__button--previous')
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 16
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 16
+  const toggleLabel = toggleButton?.querySelector('.equipment__toggle-label')
+
+  if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+      const isExpanded = equipmentSection.classList.toggle('is-expanded')
+      toggleButton.setAttribute('aria-expanded', String(isExpanded))
+      if (toggleLabel) {
+        toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
       }
-    }
-  })
-
-  toggleButton.addEventListener('click', () => {
-    const isExpanded = equipmentSection.classList.toggle('is-expanded')
-    toggleButton.setAttribute('aria-expanded', String(isExpanded))
-    toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
-
-    if (isExpanded) {
-      swiper.disable()
-    } else {
-      swiper.enable()
-      swiper.slideTo(0)
-      swiper.update()
-    }
-  })
+    })
+  }
 }
 
 const pricingCards = document.querySelector('.pricing__cards')

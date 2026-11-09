@@ -1,36 +1,38 @@
 @use '../variables' as vars;
 
-.services__top {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-}
+.services {
+  &__top {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
 
-.services__title {
-  margin: 0 0 0 -16px;
-  padding-left: 12px;
-  border-left: 4px solid vars.$color-accent;
-  font-size: 25px;
-  line-height: 1.2;
-}
+  &__title {
+    margin: 0 0 0 -16px;
+    padding-left: 12px;
+    border-left: 4px solid vars.$color-accent;
+    font-size: 25px;
+    line-height: 1.2;
+  }
 
-.services__actions {
-  display: none;
-}
+  &__actions {
+    display: none;
+  }
 
-.services__action {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: vars.$color-ink;
-  font-size: 14px;
-  text-decoration: none;
-  white-space: nowrap;
-}
+  &__action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: vars.$color-ink;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
 
-.services__action-icon {
-  width: 40px;
-  height: 40px;
+  &__action-icon {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .navigation {
@@ -42,36 +44,43 @@
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-}
 
-.navigation::-webkit-scrollbar {
-  display: none;
-}
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-.navigation__list {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: max-content;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  white-space: nowrap;
-}
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+  }
 
-.navigation__link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  padding: 8px 12px;
-  color: vars.$color-muted;
-  text-align: center;
-  text-decoration: none;
-}
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 8px 12px;
+    color: vars.$color-muted;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
 
-.navigation__link--active {
-  border: 2px solid vars.$color-aqua-border;
-  border-radius: 4px;
+    &:hover {
+      background: vars.$color-white;
+      color: vars.$color-ink;
+    }
+
+    &--active {
+      border: 2px solid vars.$color-aqua-border;
+      border-radius: 4px;
+    }
+  }
 }
 
 @media (min-width: 768px) {

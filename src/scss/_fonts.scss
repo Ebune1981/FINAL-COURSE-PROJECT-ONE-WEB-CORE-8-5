@@ -1,7 +1,7 @@
-// Paths in url() are relative to style.scss (the entry), even in partials
+// Use the TT Lakes font family when it is available locally; otherwise fall back to system sans-serif.
 @font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
+  font-family: 'TT Lakes';
+  src: local('TT Lakes'), local('TTLakes-Regular');
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
 }
