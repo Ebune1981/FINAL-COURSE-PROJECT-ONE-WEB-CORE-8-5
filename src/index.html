@@ -1,6 +1,6 @@
 <!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="CPS equipment repair and service support"><title>CPS — Services and support</title></head><body>
     <div class=layout-container>
-      <aside class=sidebar>
+      <aside id=sidebar-menu class=sidebar aria-label="Main menu">
         <header class=sidebar__header>
           <button type=button class=sidebar__icon-button aria-label="Close menu">
             <img src=./img/icon-container.png alt class=sidebar__icon>
@@ -49,9 +49,10 @@
           </div>
         </footer>
       </aside>
+      <div class=sidebar__backdrop aria-hidden=true></div>
       <main class=main-content>
         <section class=header>
-          <button class=header__button aria-label="Open menu">
+          <button class=header__button type=button aria-label="Open menu" aria-controls=sidebar-menu aria-expanded=false>
             <img class=header__icon src=./img/icon-menu.svg alt>
           </button>
           <span class="header__divider header__divider--visible-tablet"></span>

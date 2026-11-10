@@ -20,10 +20,10 @@
 
   &__text--secondary {
     display: none;
+  }
 
-    &.is-visible {
-      display: block;
-    }
+  &__text--visible {
+    display: block;
   }
 
   &__more {
