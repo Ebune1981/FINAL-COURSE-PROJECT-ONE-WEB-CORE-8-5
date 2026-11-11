@@ -132,8 +132,8 @@ if (brandSection) {
         slidesPerView: 1.2,
         spaceBetween: 12,
         navigation: {
-          nextEl: slider.querySelector('.brands-slider__button--direction--next'),
-          prevEl: slider.querySelector('.brands-slider__button--direction--previous')
+          nextEl: slider.querySelector('.brands-slider__button--next'),
+          prevEl: slider.querySelector('.brands-slider__button--previous')
         },
         pagination: {
           el: slider.querySelector('.brands-slider__pagination'),

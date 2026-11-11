@@ -27,7 +27,7 @@
       background: vars.$color-page;
     }
 
-    &--visibility--tablet {
+    &--visible-tablet {
       display: none;
     }
   }
@@ -55,7 +55,7 @@
     height: 32px;
     background: vars.$color-border;
 
-    &--visibility--tablet {
+    &--visible-tablet {
       display: none;
     }
   }
@@ -64,8 +64,8 @@
     margin: -24px -24px 32px;
     padding: 8px 24px;
 
-    &__button--visibility--tablet,
-    &__divider--visibility--tablet {
+    &__button--visible-tablet,
+    &__divider--visible-tablet {
       display: inline-flex;
     }
   }
