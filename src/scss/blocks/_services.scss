@@ -76,7 +76,7 @@
       color: vars.$color-ink;
     }
 
-    &--active {
+    &--state--active {
       border: 2px solid vars.$color-aqua-border;
       border-radius: 4px;
     }
