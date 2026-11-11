@@ -21,7 +21,7 @@ if (menu && menuToggle && menuClose && menuBackdrop) {
     )
 
   const closeMenu = (restoreFocus = true) => {
-    menu.classList.remove('sidebar--state--open')
+    menu.classList.remove('sidebar--open')
     menuToggle.setAttribute('aria-expanded', 'false')
     menu.setAttribute('aria-hidden', 'true')
     menu.inert = true
@@ -35,7 +35,7 @@ if (menu && menuToggle && menuClose && menuBackdrop) {
     if (!mobileMenuQuery.matches) return
 
     previousBodyOverflow = document.body.style.overflow
-    menu.classList.add('sidebar--state--open')
+    menu.classList.add('sidebar--open')
     menuToggle.setAttribute('aria-expanded', 'true')
     menu.setAttribute('aria-hidden', 'false')
     menu.inert = false
@@ -50,7 +50,7 @@ if (menu && menuToggle && menuClose && menuBackdrop) {
   menuBackdrop.addEventListener('click', closeMenu)
 
   document.addEventListener('keydown', (event) => {
-    if (!menu.classList.contains('sidebar--state--open')) return
+    if (!menu.classList.contains('sidebar--open')) return
 
     if (event.key === 'Escape') {
       event.preventDefault()
@@ -82,13 +82,13 @@ if (menu && menuToggle && menuClose && menuBackdrop) {
 
   mobileMenuQuery.addEventListener('change', (event) => {
     if (!event.matches) {
-      if (menu.classList.contains('sidebar--state--open')) {
+      if (menu.classList.contains('sidebar--open')) {
         closeMenu(false)
       }
 
       menu.removeAttribute('aria-hidden')
       menu.inert = false
-    } else if (!menu.classList.contains('sidebar--state--open')) {
+    } else if (!menu.classList.contains('sidebar--open')) {
       menu.setAttribute('aria-hidden', 'true')
       menu.inert = true
     }
@@ -110,7 +110,7 @@ if (readMoreButton) {
 
   readMoreButton.addEventListener('click', () => {
     const isExpanded = readMoreButton.getAttribute('aria-expanded') !== 'true'
-    extraText.classList.toggle('hero__text--state--visible', isExpanded)
+    extraText.classList.toggle('hero__text--visible', isExpanded)
     readMoreButton.setAttribute('aria-expanded', String(isExpanded))
     readMoreLabel.textContent = isExpanded ? 'Read less' : 'Read more'
   })
@@ -132,15 +132,15 @@ if (brandSection) {
         slidesPerView: 1.2,
         spaceBetween: 12,
         navigation: {
-          nextEl: slider.querySelector('.brands-slider__button--direction--next'),
-          prevEl: slider.querySelector('.brands-slider__button--direction--previous')
+          nextEl: slider.querySelector('.brands-slider__button--next'),
+          prevEl: slider.querySelector('.brands-slider__button--previous')
         },
         pagination: {
           el: slider.querySelector('.brands-slider__pagination'),
           clickable: true
         }
       })
-      if (brandSection.classList.contains('brand-section--state--expanded')) {
+      if (brandSection.classList.contains('brand-section--expanded')) {
         brandSwiper.disable()
       }
     } else if (!mobileBrandQuery.matches && brandSwiper) {
@@ -154,7 +154,7 @@ if (brandSection) {
 
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
-      const isExpanded = brandSection.classList.toggle('brand-section--state--expanded')
+      const isExpanded = brandSection.classList.toggle('brand-section--expanded')
       toggleButton.setAttribute('aria-expanded', String(isExpanded))
       if (toggleLabel) {
         toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
@@ -174,49 +174,15 @@ if (brandSection) {
 const equipmentSection = document.querySelector('.equipment')
 
 if (equipmentSection) {
-  const equipmentSlider = equipmentSection.querySelector('.equipment__slider')
   const toggleButton = equipmentSection.querySelector('.equipment__toggle')
   const toggleLabel = toggleButton?.querySelector('.equipment__toggle-label')
-  const mobileEquipmentQuery = window.matchMedia('(max-width: 767px)')
-  let equipmentSwiper = null
-
-  const syncEquipmentSwiper = () => {
-    if (mobileEquipmentQuery.matches && !equipmentSwiper) {
-      equipmentSwiper = new Swiper(equipmentSlider, {
-        modules: [A11y],
-        slidesPerView: 1.2,
-        spaceBetween: 12,
-        a11y: {
-          slideLabelMessage: 'Equipment type {{index}} of {{slidesLength}}'
-        }
-      })
-
-      if (equipmentSection.classList.contains('equipment--state--expanded')) {
-        equipmentSwiper.disable()
-      }
-    } else if (!mobileEquipmentQuery.matches && equipmentSwiper) {
-      equipmentSwiper.destroy(true, true)
-      equipmentSwiper = null
-    }
-  }
-
-  syncEquipmentSwiper()
-  mobileEquipmentQuery.addEventListener('change', syncEquipmentSwiper)
 
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
-      const isExpanded = equipmentSection.classList.toggle('equipment--state--expanded')
+      const isExpanded = equipmentSection.classList.toggle('equipment--expanded')
       toggleButton.setAttribute('aria-expanded', String(isExpanded))
       if (toggleLabel) {
         toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
-      }
-
-      if (isExpanded) {
-        equipmentSwiper?.disable()
-      } else {
-        equipmentSwiper?.enable()
-        equipmentSwiper?.slideTo(0)
-        equipmentSwiper?.update()
       }
     })
   }

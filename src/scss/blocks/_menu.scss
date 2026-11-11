@@ -19,7 +19,7 @@
     transform 240ms ease,
     visibility 0s linear 240ms;
 
-  &--state--open {
+  &--open {
     transform: translateX(0);
     visibility: visible;
     transition:
@@ -129,7 +129,7 @@
     color: vars.$color-slate;
     text-decoration: none;
 
-    &--state--active,
+    &--active,
     &:hover {
       color: vars.$color-neutral;
     }
@@ -169,7 +169,7 @@
   visibility: hidden;
 }
 
-.sidebar--state--open + .sidebar__backdrop {
+.sidebar--open + .sidebar__backdrop {
   opacity: 1;
   pointer-events: auto;
   transition:
