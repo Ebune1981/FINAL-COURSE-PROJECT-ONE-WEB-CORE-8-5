@@ -2,6 +2,6 @@
   font-family: 'TT Lakes';
   src: url('path-to-font/TTLakes-Regular.woff2') format('woff2'),
        url('path-to-font/TTLakes-Regular.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
 }
