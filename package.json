@@ -8,10 +8,11 @@
     "scss",
     "html",
     "javascript",
-    "webpack"
+    "webpack Project",
+    "Norbert"
   ],
   "license": "ISC",
-  "author": "Habsida",
+  "author": "Ebune Norbert",
   "scripts": {
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",

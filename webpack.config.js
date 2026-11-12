@@ -73,7 +73,7 @@ module.exports = (env, argv) => {
     plugins: [
       // Include html file, styles and scripts will be automatically injected
       new HtmlWebpackPlugin({
-        title: 'Webpack 5 Starter',
+        title: 'CPS — Services and support',
         template: './src/index.html',
         inject: true,
         minify: {
