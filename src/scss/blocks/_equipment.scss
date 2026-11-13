@@ -39,6 +39,10 @@
 
     &::after {
       position: absolute;
+      width:40px;
+      height: 40px;
+      border-radius: 50px;
+      border: 2px solid vars $color-order;
       right: 12px;
       bottom: 5px;
       color: vars.$color-order;
@@ -46,6 +50,16 @@
       font-size: 24px;
       line-height: 1;
     }
+    &::before{
+      position:absolute;
+      right: 32px;
+      bottom: 32px;
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-top:2px solid vars.$color-order;
+      border-right: 2px solid vars.$color-order;
+    }transform: rotate(45deg);
 
     &:hover {
       border-color: vars.$color-order;
