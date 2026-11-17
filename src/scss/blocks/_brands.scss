@@ -122,7 +122,7 @@
       filter: none;
     }
 
-    &--bosch img {
+    &--bsch img {
       width: 240px;
       height: 72px;
       padding: 8px;
@@ -188,7 +188,7 @@
 
     .brands-slider__track {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 16px;
       transform: none !important;
     }
@@ -206,7 +206,7 @@
 
   .brand-section--state--expanded {
     .brands-slider__track {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
   }
 
@@ -217,16 +217,10 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .brands-slider .brands-slider__track {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1440px) {
-  .brand-section:not(.brand-section--state--expanded) {
-    .brands-slider__slide:nth-child(n + 7) {
-      display: flex;
-    }
-  }
-}
+

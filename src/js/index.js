@@ -7,8 +7,12 @@ import Swiper from 'swiper'
 import { A11y, Navigation, Pagination } from 'swiper/modules'
 
 const menu = document.querySelector('.sidebar')
-const menuToggle = document.querySelector('.header__button[aria-controls="sidebar-menu"]')
-const menuClose = menu?.querySelector('.sidebar__icon-button[aria-label="Close menu"]')
+const menuToggle = document.querySelector(
+  '.header__button[aria-controls="sidebar-menu"]'
+)
+const menuClose = menu?.querySelector(
+  '.sidebar__icon-button[aria-label="Close menu"]'
+)
 const menuBackdrop = document.querySelector('.sidebar__backdrop')
 const mobileMenuQuery = window.matchMedia('(max-width: 1023px)')
 
@@ -16,9 +20,11 @@ if (menu && menuToggle && menuClose && menuBackdrop) {
   let previousBodyOverflow = ''
 
   const getMenuFocusables = () =>
-    [...menu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')].filter(
-      (element) => element.getClientRects().length > 0
-    )
+    [
+      ...menu.querySelectorAll(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    ].filter((element) => element.getClientRects().length > 0)
 
   const closeMenu = (restoreFocus = true) => {
     menu.classList.remove('sidebar--state--open')
@@ -121,7 +127,9 @@ const brandSection = document.querySelector('.brand-section')
 if (brandSection) {
   const slider = brandSection.querySelector('.brands-slider')
   const toggleButton = brandSection.querySelector('.brand-section__toggle')
-  const toggleLabel = toggleButton?.querySelector('.brand-section__toggle-label')
+  const toggleLabel = toggleButton?.querySelector(
+    '.brand-section__toggle-label'
+  )
   const mobileBrandQuery = window.matchMedia('(max-width: 767px)')
   let brandSwiper = null
 
@@ -154,7 +162,9 @@ if (brandSection) {
 
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
-      const isExpanded = brandSection.classList.toggle('brand-section--state--expanded')
+      const isExpanded = brandSection.classList.toggle(
+        'brand-section--state--expanded'
+      )
       toggleButton.setAttribute('aria-expanded', String(isExpanded))
       if (toggleLabel) {
         toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'
@@ -205,7 +215,9 @@ if (equipmentSection) {
 
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
-      const isExpanded = equipmentSection.classList.toggle('equipment--state--expanded')
+      const isExpanded = equipmentSection.classList.toggle(
+        'equipment--state--expanded'
+      )
       toggleButton.setAttribute('aria-expanded', String(isExpanded))
       if (toggleLabel) {
         toggleLabel.textContent = isExpanded ? 'Show less' : 'Show all'

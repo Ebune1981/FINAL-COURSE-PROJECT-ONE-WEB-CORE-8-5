@@ -133,6 +133,11 @@
     &:hover {
       color: vars.$color-neutral;
     }
+    &_icon-button--close{
+      @media(min-width:vars.$bp-desktop){
+        display:none;
+      }
+    }
   }
 
   @media (min-width: 1024px) {
