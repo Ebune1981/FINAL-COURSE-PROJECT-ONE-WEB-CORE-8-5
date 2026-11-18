@@ -53,7 +53,7 @@
       <main class=main-content>
         <section class=header>
           <button class=header__button type=button aria-label="Open menu" aria-controls=sidebar-menu aria-expanded=false>
-            <img class=header__icon src=./img/icon-menu.svg alt>
+            <img class=header__icon src=./img/icon-burger.png alt>
           </button>
           <span class="header__divider header__divider--visible-tablet"></span>
           <a class=header__logo-link href=#>
@@ -143,8 +143,8 @@
               <a class="brands-slider__slide swiper-slide" href=# aria-label=ViewSonic>
                 <img src=./img/icon-viewsonnic.png alt=ViewSonic>
               </a>
-              <a class="brands-slider__slide swiper-slide" href=# aria-label=Bosch>
-                <img src=./img/icon-bosch.png alt=Bosch>
+              <a class="brands-slider__slide swiper-slide" href=# aria-label=SCH>
+                <img src=./img/icon-sch.png alt=SCH>
               </a>
               <a class="brands-slider__slide swiper-slide" href=# aria-label=HP>
                 <img src=./img/icon-hp.png alt=HP>
@@ -157,9 +157,17 @@
               </a>
             </div>
             <div class=brands-slider__controls>
-              <button class="brands-slider__button brands-slider__button--previous" type=button aria-label="Previous brand"></button>
+              <button class="brands-slider__button brands-slider__button--previous" type=button aria-label="Previous brand">
+                <svg class=brands-slider__icon aria-hidden=true viewBox="0 0 16 16" focusable=false>
+                  <path d="m10 3-5 5 5 5"/>
+                </svg>
+              </button>
               <div class="brands-slider__pagination swiper-pagination" aria-label="Choose a brand slide"></div>
-              <button class="brands-slider__button brands-slider__button--next" type=button aria-label="Next brand"></button>
+              <button class="brands-slider__button brands-slider__button--next" type=button aria-label="Next brand">
+                <svg class=brands-slider__icon aria-hidden=true viewBox="0 0 16 16" focusable=false>
+                  <path d="m6 3 5 5-5 5"/>
+                </svg>
+              </button>
             </div>
           </div>
           <button class=brand-section__toggle type=button aria-expanded=false>
