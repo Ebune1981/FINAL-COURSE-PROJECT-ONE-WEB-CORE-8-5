@@ -108,8 +108,9 @@
 
   &__pagination {
     display: none;
+    align-items: center;
     justify-content: center;
-    gap: 8px;
+     gap: 8px;
     margin-top: 16px;
 
     @media (max-width: 767px) {
@@ -188,5 +189,17 @@
 @media (min-width: 1024px) {
   .equipment .equipment__grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .equipment--state--expanded {
+    .equipment__grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .equipment:not(.equipment--state--expanded) {
+    .equipment__card:nth-child(4) {
+      display: flex;
+    }
   }
 }
