@@ -193,9 +193,13 @@ if (equipmentSection) {
   const syncEquipmentSwiper = () => {
     if (mobileEquipmentQuery.matches && !equipmentSwiper) {
       equipmentSwiper = new Swiper(equipmentSlider, {
-        modules: [A11y],
+        modules: [A11y, Pagination],
         slidesPerView: 1.2,
         spaceBetween: 12,
+        pagination: {
+          el: equipmentSection.querySelector('.equipment__pagination'),
+          clickable: true
+        },
         a11y: {
           slideLabelMessage: 'Equipment type {{index}} of {{slidesLength}}'
         }
